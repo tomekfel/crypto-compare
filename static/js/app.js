@@ -38,6 +38,13 @@ let app = new Vue({
             } catch (err) {
                 console.log(err);
             }
+        },
+        /**
+         * Return a CSS color (either red or green) depending on whether or
+         * not the value passed in is negative or positive.
+         */
+        getColor: (num) => {
+            return num > 0 ? "color:green;" : "color:red;";
         }
     },
     created: function() {
