@@ -32,8 +32,12 @@ let app = new Vue({
                 })
         },
         getCoinImage: function(symbol) {
-            console.log(CRYPTOCOMPARE_API_URI + this.coinData[symbol].ImageUrl);
-            return CRYPTOCOMPARE_IMG_URI + this.coinData[symbol].ImageUrl;
+            try {
+                console.log(CRYPTOCOMPARE_IMG_URI + this.coinData[symbol].ImageUrl);
+                return CRYPTOCOMPARE_IMG_URI + this.coinData[symbol].ImageUrl;
+            } catch (err) {
+                console.log(err);
+            }
         }
     },
     created: function() {
